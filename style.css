@@ -1,0 +1,223 @@
+body {
+    display: grid;
+    grid-template-columns: 70% 1fr;
+    max-width: 1440px;
+    margin: 0 auto;
+    background-color: #818181;
+    font-size: 14px;
+    font-family: sans-serif;
+    color: #333;
+}
+
+.aside {
+    position: relative;
+    grid-column: 2;
+    background-color: #FFF;
+}
+
+.aside__sticker {
+    position: absolute;
+    width: 250px;
+    height: 300px;
+    box-shadow: 0px 0px 10px -4px lightgrey;
+    background-color: lightyellow;
+    transform: rotate(-5deg);
+    top: -30px;
+    left: 50px;
+    z-index: 1;
+}
+
+.aside__sticker::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1));
+}
+
+.aside__sticker::after {
+    content: "Очень важная заметка тут! Работает только при ширине от 1100px.";
+    font-family: 'Caveat', cursive;
+    font-size: 26px;
+    position: absolute;
+    padding: 40px 30px;
+    color: midnightblue;
+    z-index: 2;
+}
+
+.aside__sticker-shadow {
+    position: absolute;
+    width: 15px;
+    height: 245px;
+    box-shadow: -10px 3px 15px 1px grey;
+    background-color: grey;
+    transform: rotate(1deg);
+    top: calc(-30px + 50px);
+    left: calc(50px + 20px);
+    z-index: 0;
+}
+
+.comments-wrap {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 10px 50px;
+}
+
+.footer {
+    grid-column: 1 / span 2;
+    background-color: #EEFFE8;
+    padding: 20px 50px;
+    color: #999;
+}
+
+.header {
+    min-height: 90px;
+    box-sizing: border-box;
+    grid-column: 1 / span 2;
+    background-color: #EEFFE8;
+    padding: 10px 50px;
+    border-bottom: solid rgba(51, 51, 51, 0.5) 1px;
+}
+
+.header__nav {
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+}
+
+.header__nav a {
+    color: #333;
+    text-decoration: none;
+    transition: transform 0.1s;
+}
+
+.header__nav a:hover {
+    text-decoration: underline;
+    transform: scale(1.1, 1.1);
+    transition: transform 0.2s;
+}
+
+.header__title {
+    font-family: serif;
+    margin: 0 0 16px;
+}
+
+.header__subtitle {
+    margin: 0 20px 8px;
+}
+
+.main {
+    grid-column: 1;
+    background-color: #FFF;
+    padding: 10px 30px 5px;
+    min-height: 480px;
+}
+
+.main__btn,
+.main__second-btn {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    background-color: #00B43F;
+    min-height: 32px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.main__btn-icon,
+.main__second-btn-icon {
+    color: #FFF;
+    width: 22px;
+    height: 22px;
+    padding: 5px 20px 5px 0;
+}
+
+.main__btn-text,
+.main__second-btn-text {
+    padding: 5px 20px;
+    color: #FFF;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.main__btn-wrap,
+.main__second-btn-wrap {
+    padding: 30px;
+}
+
+.main__second-btn-icon {
+    display: none;
+}
+
+.main__second-btn-icon.visible {
+    display: block;
+}
+
+.main__chat-btn {
+    width: 20%;
+    min-height: 26px;
+    background-color: #BAD7EC;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.main__input-field {
+    width: 56%;
+    border: solid #BAD7EC 2px;
+    min-height: 26px;
+    box-sizing: border-box;
+}
+
+.main__interaction-field {
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.main__messages {
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    min-height: 410px;
+    border: solid #BAD7EC 2px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.recieved {
+    border: solid #BAD7EC 1px;
+    border-radius: 6px;
+    max-width: 55%;
+    align-self: flex-start;
+    margin-left: 10px;
+}
+
+.sent {
+    border: solid #BAD7EC 1px;
+    border-radius: 6px;
+    background-color: #BAD7EC;
+    max-width: 55%;
+    align-self: flex-end;
+    margin-right: 10px;
+    color: #333;
+}
+
+@media (max-width: 1099px) {
+    body {
+        grid-template-columns: 100%;
+    }
+    
+    .aside {
+        display: none;
+    }
+}
